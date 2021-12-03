@@ -67,12 +67,26 @@ namespace KomodoInsurance.UI
 
         private void ViewAllTeams()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            List<DevTeam> listOfAllTeams = _devTeamRepo.GetDevTeams();
+
+            foreach (var team in listOfAllTeams)
+            {
+                DisplayTeamInfo(team);
+            }
+            Console.ReadKey();
         }
 
         private void ViewAllDevelopers()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            List<Developer> listOfAllDevelopers = _devRepo.GetDevs();
+
+            foreach (var dev in listOfAllDevelopers)
+            {
+                DisplayDeveloperInfo(dev);
+            }
+            Console.ReadKey();
         }
 
         private void AddDeveloperToTeam()
@@ -85,7 +99,7 @@ namespace KomodoInsurance.UI
             throw new NotImplementedException();
         }
 
-        private void AddDeveloper(Developer dev)
+        private void AddDeveloper()
         {
             Console.WriteLine("Please input the developers first name:");
             string userInputFirstName = Console.ReadLine();
@@ -98,17 +112,47 @@ namespace KomodoInsurance.UI
                 "2. No");
 
             string userInput = Console.ReadLine();
-            switch (userInput)
+
+            Developer newDev = new Developer(userInputFirstName, userInputLastName);
+
+
+            if (userInput == "1")
             {
-                case "1":
-                    dev.PluralsightAccess = true;
-                    break;
-                case "2":
-                    dev.PluralsightAccess = false;
-                    break;
-                default:
-                    break;
+                newDev.PluralsightAccess = true;
             }
+            else
+            {
+                newDev.PluralsightAccess = false;
+            }
+
+            bool isSuccessful = _devRepo.AddDev(newDev);
+            if (isSuccessful)
+            {
+                Console.WriteLine($"{newDev.FirstName} {newDev.LastName} has been added to our database. Their User Id is {newDev.Id}. Thank you!");
+            }
+            else
+            {
+                Console.WriteLine($"{userInputFirstName} {userInputLastName} couldn't be added to database. Sorry!");
+            }
+            Console.WriteLine("Press Enter to go back to Main Menu!");
+            Console.ReadLine();
+        }
+
+        private void DisplayDeveloperInfo(Developer dev)
+        {
+            Console.WriteLine($"UserID: {dev.Id}\n" +
+                $"First Name:           {dev.FirstName}\n" +
+                $"Last Name:            {dev.LastName}\n" +
+                $"Pluralsight Access:   {dev.PluralsightAccess}");
+            Console.WriteLine("*************************************");
+        }
+
+        private void DisplayTeamInfo(DevTeam team)
+        {
+            Console.WriteLine($"Team ID: {team.Id}\n" +
+                $"Team Name:             {team.TeamName}\n" +
+                $"Team Members:          {team.TeamMembers}");
+            Console.WriteLine("****************************");
         }
     }
 }

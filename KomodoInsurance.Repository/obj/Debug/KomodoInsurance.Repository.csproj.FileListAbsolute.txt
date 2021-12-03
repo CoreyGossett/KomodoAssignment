@@ -1,0 +1,9 @@
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\bin\Debug\KomodoInsurance.Repository.dll
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\bin\Debug\KomodoInsurance.Repository.pdb
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\bin\Debug\KomodoInsurance.dll
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\bin\Debug\KomodoInsurance.pdb
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\obj\Debug\KomodoInsurance.Repository.csproj.AssemblyReference.cache
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\obj\Debug\KomodoInsurance.Repository.csproj.CoreCompileInputs.cache
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\obj\Debug\KomodoInsurance.Repository.csproj.CopyComplete
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\obj\Debug\KomodoInsurance.Repository.dll
+D:\sd116\Goldbadge\KomodoInsuranceTeamManager\KomodoInsurance.Repository\obj\Debug\KomodoInsurance.Repository.pdb
