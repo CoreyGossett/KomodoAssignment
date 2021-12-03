@@ -8,5 +8,22 @@ namespace KomodoInsurance
 {
     public class Developer
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Id { get; set; }
+        public bool PluralsightAccess { get; set; }
+
+        public Developer()
+        {
+               
+        }
+
+        public Developer(string firstName, string lastName, int id, bool pluralsightAccess)
+        {
+            firstName = FirstName;
+            lastName = LastName;
+            id = Id;
+            pluralsightAccess = PluralsightAccess;
+        }
     }
 }
