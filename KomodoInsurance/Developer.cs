@@ -20,10 +20,10 @@ namespace KomodoInsurance
 
         public Developer(string firstName, string lastName, int id, bool pluralsightAccess)
         {
-            firstName = FirstName;
-            lastName = LastName;
-            id = Id;
-            pluralsightAccess = PluralsightAccess;
+            FirstName = firstName;
+            LastName = lastName;
+            Id = id;
+            PluralsightAccess = pluralsightAccess;
         }
     }
 }
