@@ -85,9 +85,30 @@ namespace KomodoInsurance.UI
             throw new NotImplementedException();
         }
 
-        private void AddDeveloper()
+        private void AddDeveloper(Developer dev)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Please input the developers first name:");
+            string userInputFirstName = Console.ReadLine();
+
+            Console.WriteLine("Please input the developers last name:");
+            string userInputLastName = Console.ReadLine();
+
+            Console.WriteLine("Does the developer have access to Pluralsight?\n" +
+                "1. Yes\n" +
+                "2. No");
+
+            string userInput = Console.ReadLine();
+            switch (userInput)
+            {
+                case "1":
+                    dev.PluralsightAccess = true;
+                    break;
+                case "2":
+                    dev.PluralsightAccess = false;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
