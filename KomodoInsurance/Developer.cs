@@ -12,6 +12,7 @@ namespace KomodoInsurance
         public string LastName { get; set; }
         public int Id { get; set; }
         public bool PluralsightAccess { get; set; }
+        public int TeamId { get; set; }
 
         public Developer()
         {

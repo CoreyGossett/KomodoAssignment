@@ -63,9 +63,21 @@ namespace KomodoInsurance.Repository
             }
         }
 
-        public bool DeleteDev(int id)
+        public bool UpdateDevTeamId(Developer dev, int teamId)
         {
-            Developer devToBeDeleted = GetDevById(id);
+            if (dev != null)
+            {
+                dev.TeamId = teamId;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteDev(Developer devToBeDeleted)
+        {
             if (devToBeDeleted == null)
             {
                 return false;

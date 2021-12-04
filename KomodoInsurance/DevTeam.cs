@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KomodoInsurance
 {
-    public class DevTeam : Developer
+    public class DevTeam
     {
         public string TeamName { get; set; }
         public int TeamId { get; set; }
@@ -17,11 +17,9 @@ namespace KomodoInsurance
                 
         }
 
-        public DevTeam(string teamName, int teamId, List<Developer> teamMembers)
+        public DevTeam(string teamName)
         {
             TeamName = teamName;
-            TeamId = teamId;
-            TeamMembers = teamMembers;
         }
     }
 }

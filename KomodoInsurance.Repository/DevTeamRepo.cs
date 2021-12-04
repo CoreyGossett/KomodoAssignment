@@ -21,8 +21,9 @@ namespace KomodoInsurance.Repository
             }
             else
             {
+                team.TeamMembers = new List<Developer>();
                 _count++;
-                team.Id = _count;
+                team.TeamId = _count;
                 _devteams.Add(team);
                 return true;
             }
@@ -37,7 +38,7 @@ namespace KomodoInsurance.Repository
         {
             foreach (DevTeam team in _devteams)
             {
-                if (id == team.Id)
+                if (id == team.TeamId)
                 {
                     return team;
                 }
@@ -50,7 +51,7 @@ namespace KomodoInsurance.Repository
             DevTeam oldTeamData = GetDevTeamById(id);
             if (oldTeamData != null)
             {
-                oldTeamData.Id = newTeamData.Id;
+                oldTeamData.TeamId = newTeamData.TeamId;
                 oldTeamData.TeamName = newTeamData.TeamName;
                 oldTeamData.TeamMembers = newTeamData.TeamMembers;
                 return true;
