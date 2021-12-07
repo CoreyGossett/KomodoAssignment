@@ -28,7 +28,8 @@ namespace KomodoInsurance.UI
                 "5. View Teams\n" +
                 "6. Remove Developer From Team\n" +
                 "7. Remove Developer from Database\n" +
-                "8. Exit Application");
+                "8. Exit Application\n" +
+                "9. Display All Pluralsight Developers");
         }
 
         private void RunApplication()
@@ -65,6 +66,10 @@ namespace KomodoInsurance.UI
                     case "8":
                         isRunning = false;
                         Console.WriteLine("Thank you for using Komodo's Team Manager! Have a great day!");
+                        Console.ReadLine();
+                        break;
+                    case "9":
+                        DisplayPluralSightAccess();
                         break;
                     default:
                         break;
@@ -320,7 +325,7 @@ namespace KomodoInsurance.UI
             }
             Console.WriteLine("Press Enter to go back to Main Menu!");
             Console.ReadLine();
-        }
+        } 
 
         private void DisplayDeveloperInfo(Developer dev)
         {
@@ -340,6 +345,18 @@ namespace KomodoInsurance.UI
                 $"Pluralsight Access:   {dev.PluralsightAccess}\n" +
                 $"Team ID:              {team}");
             Console.WriteLine("*************************************");
+        }
+
+        private void DisplayPluralSightAccess()
+        {
+            List<Developer> listOfAllDevelopers = _devRepo.GetDevs();
+            foreach (var dev in listOfAllDevelopers)
+            {
+                if (dev.PluralsightAccess == true)
+                {
+                    DisplayDeveloperInfo(dev);
+                }
+            }
         }
 
         private void DisplayTeamInfo(DevTeam team)
